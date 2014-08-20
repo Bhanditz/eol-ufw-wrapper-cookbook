@@ -1,7 +1,9 @@
 name             'eol-ufw-wrapper'
-maintainer       'YOUR_COMPANY_NAME'
-maintainer_email 'YOUR_EMAIL'
-license          'All rights reserved'
-description      'Installs/Configures eol-ufw-wrapper'
+maintainer       'Marine Biological Laboratory'
+maintainer_email 'dmozzherin@gmail.com'
+license          'MIT'
+description      'Configures ubuntu firewall'
 long_description IO.read(File.join(File.dirname(__FILE__), 'README.md'))
-version          '0.1.0'
+version          '0.1.1'
+
+depends 'ufw'

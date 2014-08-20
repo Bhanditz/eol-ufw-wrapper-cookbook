@@ -3,11 +3,11 @@ eol-ufw-wrapper CHANGELOG
 
 This file is used to list changes made in each version of the eol-ufw-wrapper cookbook.
 
+0.1.1
+-----
+- [Dmitry Mozzherin][1] - implements rules taken from data bag
 0.1.0
 -----
-- [your_name] - Initial release of eol-ufw-wrapper
+- [Dmitry Mozzherin][1] - Initial nonfunctional release of eol-ufw-wrapper
 
-- - -
-Check the [Markdown Syntax Guide](http://daringfireball.net/projects/markdown/syntax) for help with Markdown.
-
-The [Github Flavored Markdown page](http://github.github.com/github-flavored-markdown/) describes the differences between markdown on github and standard markdown.
+[1]: https://github.com/dimus

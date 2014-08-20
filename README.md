@@ -1,46 +1,21 @@
 eol-ufw-wrapper Cookbook
 ========================
-TODO: Enter the cookbook description here.
-
-e.g.
-This cookbook makes your favorite breakfast sandwich.
+Creates firewall rules for ufw package using data bag
 
 Requirements
 ------------
-TODO: List your cookbook requirements. Be sure to include any requirements this cookbook has on platforms, libraries, other cookbooks, packages, operating systems, etc.
+It should work on Ubuntu Linux platrorm
 
-e.g.
-#### packages
-- `toaster` - eol-ufw-wrapper needs toaster to brown your bagel.
-
-Attributes
-----------
-TODO: List your cookbook attributes here.
-
-e.g.
-#### eol-ufw-wrapper::default
-<table>
-  <tr>
-    <th>Key</th>
-    <th>Type</th>
-    <th>Description</th>
-    <th>Default</th>
-  </tr>
-  <tr>
-    <td><tt>['eol-ufw-wrapper']['bacon']</tt></td>
-    <td>Boolean</td>
-    <td>whether to include bacon</td>
-    <td><tt>true</tt></td>
-  </tr>
-</table>
+Usage
+-----
 
 Usage
 -----
 #### eol-ufw-wrapper::default
-TODO: Write usage instructions for each cookbook.
 
-e.g.
-Just include `eol-ufw-wrapper` in your node's `run_list`:
+Two things have to be done t use this cookbook
+
+- Node run list has to inlude eol-ufw-wrapper recipe:
 
 ```json
 {
@@ -50,19 +25,44 @@ Just include `eol-ufw-wrapper` in your node's `run_list`:
   ]
 }
 ```
+- firewall rules have to be added to eol-ufw-wrapper/config.json data bag:
 
-Contributing
-------------
-TODO: (optional) If this is a public cookbook, detail the process for contributing. If this is a private cookbook, remove this section.
 
-e.g.
-1. Fork the repository on Github
-2. Create a named feature branch (like `add_component_x`)
-3. Write your change
-4. Write tests for your change (if applicable)
-5. Run the tests, ensuring they all pass
-6. Submit a Pull Request using Github
+```json
+{
+  "_readme": "Information to create firewall rules",
+  "id": "config",
+  "uwf_rules": {
+    "http1": {
+      "nodes": [],
+      "protocol": "tcp",
+      "port": "80",
+      "action": "enable"
+    },
+    "http2": {
+      "nodes": ["chef11.example.edu"],
+      "protocol": "tcp",
+      "port": "8080",
+      "action": "enable"
+    }
+  }
+}
+```
 
-License and Authors
+When "nodes" array is left empty - this port will be open for all nodes
+eol-ufw-wrapper recipe. Otherwise host will not apply ports
+which do not contain its node name
+
+Athors
 -------------------
-Authors: TODO: List authors
+
+[Dmitry Mozzherin][1]
+
+Copyright
+---------
+
+Copyright (c) 2014 Marine Biological Laboratory. See LICENSE.txt for
+further details.
+
+[1]: https://github.com/dimus
+
