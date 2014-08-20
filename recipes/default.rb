@@ -16,7 +16,7 @@ def create_firewal_rule(rule_name, data)
   end
 end
 
-ufw_rules = data_bag_item("eol-ufw-wrapper", "config") 
+ufw_rules = data_bag_item("eol-ufw-wrapper", "config")
 
 ufw_rules["ufw_rules"].each do |name, data|
   data = OpenStruct.new(data)
