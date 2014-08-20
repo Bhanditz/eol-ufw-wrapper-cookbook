@@ -8,9 +8,6 @@ It should work on Ubuntu Linux platrorm
 
 Usage
 -----
-
-Usage
------
 #### eol-ufw-wrapper::default
 
 Two things have to be done t use this cookbook
