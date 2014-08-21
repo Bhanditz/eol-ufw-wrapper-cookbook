@@ -3,6 +3,10 @@ eol-ufw-wrapper CHANGELOG
 
 This file is used to list changes made in each version of the eol-ufw-wrapper cookbook.
 
+0.1.3
+-----
+- [Dmitry Mozzherin][1] - minor fixes
+
 0.1.2
 -----
 - [Dmitry Mozzherin][1] - bug fix
