@@ -29,7 +29,7 @@ Two things have to be done t use this cookbook
 {
   "_readme": "Information to create firewall rules",
   "id": "config",
-  "uwf_rules": {
+  "ufw_rules": {
     "http1": {
       "nodes": [],
       "protocol": "tcp",
