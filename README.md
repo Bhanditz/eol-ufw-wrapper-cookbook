@@ -34,13 +34,13 @@ Two things have to be done t use this cookbook
       "nodes": [],
       "protocol": "tcp",
       "port": "80",
-      "action": "enable"
+      "action": "allow"
     },
     "http2": {
       "nodes": ["chef11.example.edu"],
       "protocol": "tcp",
       "port": "8080",
-      "action": "enable"
+      "action": "allow"
     }
   }
 }
